@@ -91,7 +91,7 @@ export default function GetCard() {
                                 onClick={handleGenerateCard}
                                 className="cursor-pointer mt-4 bg-green-800 hover:bg-green-900 text-white font-semibold py-2 px-6 rounded-lg transition-all"
                             >
-                                {loading ? "Generating Eid Card ..." : "Generate Eid Card"}
+                                {loading ? "Generating  ..." : "Generate Eid Card"}
                             </button>
                         </div>
                     )}
@@ -99,11 +99,11 @@ export default function GetCard() {
                     {showCard && !downloaded && (
                         <div className="mt-6 text-center">
                             <button onClick={handleGenerateNewCard} className="cursor-pointer px-1.5 relative left-40 size-1 z-10 text-gray-500">✖</button>
-                            <div ref={cardRef} className="relative bg-yellow-400 p-8 rounded-lg shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
-                                style={{ backgroundImage: "url('/imgg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+                            <div ref={cardRef} className="relative bg-yellow-400 p-8  shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
+                                style={{ backgroundImage: "url('/wish.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
-                                <div className="absolute inset-0 bg-black/45"></div>
-                                <h2 className="text-3xl font-bold z-10">🌙 Eid Mubarak! 🎉</h2>
+                                <div className="absolute inset-0 bg-black/65"></div>
+                                <h2 className="text-3xl font-bold z-10 text-gray-300">🌙 Eid Mubarak! 🎉</h2>
                                 <p className="text-xl mt-2 z-10">Dear <span className="font-bold text-yellow-500">{name}</span>,</p>
                                 <p className="mt-2 z-10">Eid Mubarak! May Allah bless you with joy, peace, and prosperity, and accept your prayers!</p>
                                 <div className="absolute bottom-4 text-[14px] font-semibold z-10">- Sunam Ali</div>
