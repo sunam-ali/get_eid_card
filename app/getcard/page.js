@@ -68,7 +68,7 @@ export default function GetCard() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
 
-            <main className="relative w-full h-screen flex flex-col items-center justify-center text-center text-white bg-cover bg-center px-4" style={{ backgroundImage: "url('/bg-image.jpg')" }}>
+            <main className="relative w-full h-screen flex flex-col items-center justify-center text-center text-white bg-cover bg-center px-4" style={{ backgroundImage: "url('/bg-image2.jpg')" }}>
 
                 <div className="absolute inset-0 bg-black/85"></div>
 
