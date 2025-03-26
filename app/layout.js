@@ -17,10 +17,10 @@ export const metadata = {
     title: "Get Your Eid Card & Share Eid Mubarak Wishes",
     description: "Create and customize your Eid Mubarak card. Share heartfelt wishes with your loved ones this festive season!",
     type: "website",
-    url: "https://yourwebsite.com",
+    url: "https://get-eid-card.vercel.app",
     images: [
       {
-        url: "https://yourwebsite.com/geteidcard.jpg",
+        url: "https://get-eid-card.vercel.app/geteidcard.jpg",
         width: 1200,
         height: 630,
         alt: "Eid Mubarak Personalized Card",
