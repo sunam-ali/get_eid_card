@@ -70,7 +70,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/85"></div>
 
         <section className="absolute top-10 text-center z-20">
-          <h2 className="text-5xl sm:text-7xl font-bold text-[#19bd58] drop-shadow-lg">
+          <h2 className="text-4xl sm:text-7xl font-bold text-[#19bd58] drop-shadow-lg">
             {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
           </h2>
           <p className="text-xl font-semibold text-white">Counting Down to Eid 🎉</p>

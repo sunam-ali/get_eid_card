@@ -98,7 +98,7 @@ export default function GetCard() {
 
                     {showCard && !downloaded && (
                         <div className="mt-6 text-center">
-                            <button onClick={handleGenerateNewCard} className="cursor-pointer border rounded-full px-1.5 relative left-44 z-10 text-gray-500">✖</button>
+                            <button onClick={handleGenerateNewCard} className="cursor-pointer px-1.5 relative left-40 size-1 z-10 text-gray-500">✖</button>
                             <div ref={cardRef} className="relative bg-yellow-400 p-8 rounded-lg shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
                                 style={{ backgroundImage: "url('/imgg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
 
