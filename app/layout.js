@@ -12,7 +12,7 @@ export const metadata = {
   title: "Get Your Eid Card & Share Eid Mubarak Wishes",
   description: "Create a personalized Eid Mubarak card and share your festive greetings with friends and family. Get your Eid card now!",
   keywords: "Eid Mubarak card, personalized Eid greetings, Eid wishes, Eid festival card",
-  author: "Your Name",
+  author: "Sunam Ali",
   openGraph: {
     title: "Get Your Eid Card & Share Eid Mubarak Wishes",
     description: "Create and customize your Eid Mubarak card. Share heartfelt wishes with your loved ones this festive season!",
