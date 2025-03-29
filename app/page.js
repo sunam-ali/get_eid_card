@@ -87,7 +87,7 @@ export default function Home() {
               className="cursor-pointer mt-12 px-6 py-3 bg-green-800 text-white font-semibold sm:text-xl rounded-lg shadow-lg hover:bg-green-900 transition-all duration-300"
               aria-label="Get Your Eid Card"
             >
-              Get Your Eid Card
+              Eid Wish Card
             </button>
           </Link>
         </section>

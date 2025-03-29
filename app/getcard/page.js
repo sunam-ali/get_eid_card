@@ -7,17 +7,17 @@ import Confetti from "react-confetti";
 
 export default function GetCard() {
     const router = useRouter();
-    const [name, setName] = useState("");
+    const [friendName, setFriendName] = useState("");
+    const [yourName, setYourName] = useState("");
     const [showCard, setShowCard] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    const [downloaded, setDownloaded] = useState(false);
     const [celebrate, setCelebrate] = useState(false);
     const cardRef = useRef(null);
 
     const handleGenerateCard = () => {
-        if (name.trim() === "") {
-            setError("Name is required!");
+        if (friendName.trim() === "" || yourName.trim() === "") {
+            setError("Both names are required!");
             return;
         }
         setError("");
@@ -34,18 +34,16 @@ export default function GetCard() {
             toPng(cardRef.current, { backgroundColor: "white" }).then((dataUrl) => {
                 const link = document.createElement("a");
                 link.href = dataUrl;
-                link.download = `Eid_Mubarak_${name}.png`;
+                link.download = `Eid_Mubarak_${friendName}.png`;
                 link.click();
-                setDownloaded(true);
-                router.push("/");
             });
         }
     };
 
     const handleGenerateNewCard = () => {
-        setName("");
+        setFriendName("");
+        setYourName("");
         setShowCard(false);
-        setDownloaded(false);
         setError("");
         setLoading(false);
         setCelebrate(false);
@@ -69,19 +67,25 @@ export default function GetCard() {
             </Head>
 
             <main className="relative w-full h-screen flex flex-col items-center justify-center text-center text-white bg-cover bg-center px-4" style={{ backgroundImage: "url('/bg-image2.jpg')" }}>
-
                 <div className="absolute inset-0 bg-black/85"></div>
-
                 {celebrate && <Confetti width={window.innerWidth} height={window.innerHeight} />}
 
                 <div className="z-50">
-                    {!showCard && !downloaded && (
+                    {!showCard && (
                         <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md text-center">
-                            <h1 className="text-2xl font-bold text-yellow-400">Enter Your Name</h1>
+                            <h1 className="text-2xl font-bold text-yellow-400">Enter Names</h1>
                             <input
                                 type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                value={friendName}
+                                onChange={(e) => setFriendName(e.target.value)}
+                                placeholder="Enter Your Friend's Name"
+                                className="w-full mt-4 p-3 rounded-lg text-white outline-none border focus:border-yellow-500 bg-gray-700"
+                                required
+                            />
+                            <input
+                                type="text"
+                                value={yourName}
+                                onChange={(e) => setYourName(e.target.value)}
                                 placeholder="Enter Your Name"
                                 className="w-full mt-4 p-3 rounded-lg text-white outline-none border focus:border-yellow-500 bg-gray-700"
                                 required
@@ -91,30 +95,36 @@ export default function GetCard() {
                                 onClick={handleGenerateCard}
                                 className="cursor-pointer mt-4 bg-green-800 hover:bg-green-900 text-white font-semibold py-2 px-6 rounded-lg transition-all"
                             >
-                                {loading ? "Generating  ..." : "Generate Eid Card"}
+                                {loading ? "Generating ..." : "Generate Eid Card"}
                             </button>
                         </div>
                     )}
 
-                    {showCard && !downloaded && (
+                    {showCard && (
                         <div className="mt-6 text-center">
-                            <button onClick={handleGenerateNewCard} className="cursor-pointer px-1.5 relative left-40 size-1 z-10 text-gray-500">✖</button>
-                            <div ref={cardRef} className="relative bg-yellow-400 p-8  shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
+                            <div ref={cardRef} className="relative bg-yellow-400 p-8 shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
                                 style={{ backgroundImage: "url('/wish.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-
                                 <div className="absolute inset-0 bg-black/65"></div>
                                 <h2 className="text-3xl font-bold z-10 text-gray-300">🌙 Eid Mubarak! 🎉</h2>
-                                <p className="text-xl mt-2 z-10">Dear <span className="font-bold text-yellow-500">{name}</span>,</p>
+                                <p className="text-xl mt-2 z-10">Dear <span className="font-bold text-yellow-500">{friendName}</span>,</p>
                                 <p className="mt-2 z-10">Eid Mubarak! May Allah bless you with joy, peace, and prosperity, and accept your prayers!</p>
-                                <div className="absolute bottom-4 text-[14px] font-semibold z-10">- Sunam Ali</div>
+                                <div className="absolute bottom-4 text-[14px] font-semibold z-10">- {yourName}</div>
                             </div>
 
-                            <button
-                                onClick={handleDownload}
-                                className="mt-6 bg-green-800 hover:bg-green-900 text-white font-semibold py-2 px-6 rounded-lg transition-all cursor-pointer"
-                            >
-                                Download Card
-                            </button>
+                            <div className="mt-6 flex flex-col space-y-4">
+                                <button
+                                    onClick={handleDownload}
+                                    className="bg-green-800 hover:bg-green-900 text-white font-semibold py-2 px-6 rounded-lg transition-all cursor-pointer"
+                                >
+                                    Download Card
+                                </button>
+                                <button
+                                    onClick={handleGenerateNewCard}
+                                    className="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-lg transition-all cursor-pointer"
+                                >
+                                    Create Another Card
+                                </button>
+                            </div>
                         </div>
                     )}
                 </div>
