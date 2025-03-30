@@ -105,7 +105,7 @@ export default function GetCard() {
                             <div ref={cardRef} className="relative bg-yellow-400 p-8 shadow-xl w-80 h-80 flex flex-col items-center justify-center text-white"
                                 style={{ backgroundImage: "url('/wish.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
                                 <div className="absolute inset-0 bg-black/65"></div>
-                                <h2 className="text-3xl font-bold z-10 text-gray-300">🌙 Eid Mubarak! 🎉</h2>
+                                <h2 className="text-3xl font-bold z-10 text-yellow-500">Eid Mubarak! <br/>🎉</h2>
                                 <p className="text-xl mt-2 z-10">Dear <span className="font-bold text-yellow-500">{friendName}</span>,</p>
                                 <p className="mt-2 z-10">Eid Mubarak! May Allah bless you with joy, peace, and prosperity, and accept your prayers!</p>
                                 <div className="absolute bottom-4 text-[14px] font-semibold z-10">- {yourName}</div>
